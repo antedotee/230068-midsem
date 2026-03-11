@@ -1,0 +1,57 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {"tool_name": "Cursor", "model": "GPT-5.4", "provider": "OpenAI"}
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Understanding baselines and limitations for Task 1.3.",
+      "prompt": "What baseline does DRM compare against in the paper? What limitation of Bagging and AdaBoost does DRM address?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Summarized baseline comparison; I cross-checked with Table 1 and Section 1.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 1.3",
+      "code_used_verbatim": false
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Identifying failure condition for Task 1.3.",
+      "prompt": "When would DRM not outperform a single SVM? Give one concrete condition.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested linearly separable case; I linked it to Assumption 1 from Task 1.2.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 1.3",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "What baseline does DRM compare against in the paper? What limitation of Bagging and AdaBoost does DRM address?",
+      "why_important": "This framed the baseline/limitation/improvement structure of Task 1.3."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.3.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}

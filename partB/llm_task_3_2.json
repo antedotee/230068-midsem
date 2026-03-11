@@ -1,0 +1,57 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {"tool_name": "Cursor", "model": "GPT-5.4", "provider": "OpenAI"}
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Designing failure mode for Task 3.2.",
+      "prompt": "What failure scenario would best demonstrate when DRM's diversity regularization hurts rather than helps?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested linearly separable data and mu sweep; I implemented and observed the curve.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 3.2",
+      "code_used_verbatim": false
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Linking failure to assumptions.",
+      "prompt": "Which assumption from Task 1.2 does the failure mode connect to?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Connected to multiple diverse-accurate learners; I wrote this in the notebook.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 3.2",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "What failure scenario would best demonstrate when DRM's diversity regularization hurts rather than helps?",
+      "why_important": "This guided the failure_linear_dataset and mu sweep design."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 3.2.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}

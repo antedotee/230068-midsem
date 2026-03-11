@@ -1,0 +1,57 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {"tool_name": "Cursor", "model": "GPT-5.4", "provider": "OpenAI"}
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Identifying assumptions for Task 1.2.",
+      "prompt": "What are the main assumptions the Diversity Regularized Machine paper relies on? Think about when DRM would fail or underperform.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested assumptions; I refined with violation scenarios and paper citations.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 1.2",
+      "code_used_verbatim": false
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Verifying Assumption 3 about norm constraints.",
+      "prompt": "Does DRM assume the norm constraints are satisfied for the relaxation? Where is this in the paper?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Pointed to Section 2.3; I confirmed the KKT discussion after Eq. (7).",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 1.2",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "What are the main assumptions the Diversity Regularized Machine paper relies on? Think about when DRM would fail or underperform.",
+      "why_important": "This reflective prompt led to all four assumptions and their violation scenarios."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.2.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}

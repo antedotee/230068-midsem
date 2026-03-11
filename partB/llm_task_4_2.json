@@ -1,0 +1,57 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {"tool_name": "Cursor", "model": "GPT-5.4", "provider": "OpenAI"}
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Structuring Task 4.2 disclosure files.",
+      "prompt": "What should a Part B LLM disclosure JSON include for each task? Match the Part A schema where possible.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested full_llm_interaction_log and top_5_prompts; I expanded with task-specific prompts.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 4.2",
+      "code_used_verbatim": false
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Keeping disclosure consistent with repo structure.",
+      "prompt": "yes, make sure to include part a and b , both solutions as the repo I have to submit is same in part a and b",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Ensured Part A and Part B disclosures align.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 4.2",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "What should a Part B LLM disclosure JSON include for each task? Match the Part A schema where possible.",
+      "why_important": "This defined the structure of the per-task disclosure files."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 4.2.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}

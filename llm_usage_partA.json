@@ -1,0 +1,213 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part A",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "provider": "OpenAI"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-08",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Finding suitable papers for Part A that satisfy venue, year, and method constraints.",
+      "prompt": "I need to select a paper for an Advanced ML mid-sem exam. The paper must be from a top venue (NeurIPS, ICML, IJCAI, AAAI, etc.), published 2010–2015, and use SVM or kernel methods. Suggest 3–4 candidate papers with brief summaries.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It suggested several SVM-related papers including DRM; I then searched IJCAI 2011 proceedings to confirm DRM existed and read the abstract myself.",
+      "student_verification": "I cross-checked each suggested paper in the official conference proceedings and DBLP before shortlisting. DRM (Yu, Li, Zhou, IJCAI 2011) was confirmed to exist and fit the constraints.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-08",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Understanding whether DRM qualifies as an SVM-based method for the exam constraints.",
+      "prompt": "Does the Diversity Regularized Machine (DRM) paper by Yu, Li, Zhou use SVMs? I need to confirm it fits a requirement for SVM or kernel methods.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It confirmed DRM trains an ensemble of SVM-style learners; I then read Section 2.2 of the paper to verify the nu-SVM framework and square hinge loss.",
+      "student_verification": "I opened the paper PDF and verified Section 2.2 explicitly uses the nu-SVM framework with square hinge loss and kernel-induced phi(x). The method is clearly SVM-based.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "date": "2026-03-09",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Understanding the diversity measure used in DRM.",
+      "prompt": "Explain the diversity measure div(w1, w2) = 1 - (w1^T w2)/(||w1|| ||w2||) in the Diversity Regularized Machine paper. Why does the paper use angle between weight vectors instead of output disagreement?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It clarified that for linear learners the direction of w matters most for classification; I re-read Section 2.1 to confirm the paper's own justification.",
+      "student_verification": "I matched the explanation to the paper text in Section 2.1: 'the direction of the linear learner effects the classification most' and the pairwise diversity form. The angle-based measure is correctly described.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "date": "2026-03-09",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Understanding the optimization from Eq. (2) to Eq. (3) in DRM.",
+      "prompt": "In DRM, how does the diversity term w_t^T w_t' / (||w_t|| ||w_t'||) get relaxed to ||w_t + w_t'||^2 in the convex formulation? What condition allows this?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It explained the unit-norm condition and the constant-shift trick; I traced through the paper's derivation in Section 2.3 to verify.",
+      "student_verification": "I followed the paper's argument: under ||w_t||_2 = 1, the diversity term simplifies, and adding the constant 2 does not change the optimum. The relaxation is correctly stated in Eq. (3).",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 5,
+      "date": "2026-03-09",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Understanding the alternating optimization in DRM Algorithm 1.",
+      "prompt": "How does the alternating optimization in DRM work? For each learner t, what variables are optimized while others are fixed, and how does it relate to Eq. (4)?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It broke down the per-learner QCQP subproblem; I used this to understand Algorithm 1 and the alpha_t, lambda_t updates in Eq. (6) and Eq. (7).",
+      "student_verification": "I compared the description to Algorithm 1 and Eq. (4)–(7). The loop over t, fixing w_t' for t' != t, and solving for {w_t, rho_t, xi_t} matches the paper exactly.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 6,
+      "date": "2026-03-09",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Identifying key assumptions for Task 1.2.",
+      "prompt": "What are the main assumptions the Diversity Regularized Machine paper relies on? Think about when DRM would fail or underperform.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It suggested assumptions about multiple diverse-accurate learners and angle-based diversity; I refined these using the paper's own discussion and violation scenarios.",
+      "student_verification": "I wrote the assumptions in Task 1.2 by combining the LLM suggestions with direct references to Section 2.1, 2.3, and the theoretical analysis. Each assumption has a paper citation.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 7,
+      "date": "2026-03-10",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Planning a feasible reproduction for Part B given time constraints.",
+      "prompt": "The DRM paper uses alternating QCQP and dual updates. For a simplified reproduction in limited time, what is the minimal faithful implementation that still captures the core idea of diversity regularization?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "It suggested a gradient-based surrogate with a diversity penalty on pairwise alignment; I used this as the basis for SimpleDRMClassifier in drm_support.py.",
+      "student_verification": "I implemented the suggested surrogate, ran experiments, and confirmed it produces sensible decision boundaries and ablation results. The code matches the paper's conceptual structure even if not the exact solver.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 8,
+      "date": "2026-03-10",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Choosing a dataset suitable for DRM reproduction.",
+      "prompt": "What kind of dataset would best demonstrate DRM's diversity regularization? The paper uses UCI data; I need something smaller for a toy reproduction.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It suggested two-moons or similar nonlinear binary problems where a kernel map helps; I chose make_moons for visualization and reproducibility.",
+      "student_verification": "I verified the two-moons dataset is binary, has a nonlinear boundary, and benefits from an RBF-style feature map. This aligns with the paper's setting in Section 2 and 4.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 9,
+      "date": "2026-03-10",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Designing ablations for Task 3.1.",
+      "prompt": "For an ablation study of DRM, which two components would be most informative to remove? Consider diversity term (mu) and the feature map.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It recommended ablating mu=0 and the nonlinear map; I implemented both and interpreted the results in the notebooks.",
+      "student_verification": "I ran the ablations and wrote the analysis myself. The drop from full model to mu=0 and to no-RFF matches the paper's claim that diversity and representation both matter.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 10,
+      "date": "2026-03-10",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Designing a failure-mode experiment for Task 3.2.",
+      "prompt": "What failure scenario would best demonstrate when DRM's diversity regularization hurts rather than helps? The paper says diversity can act like regularization.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It suggested using nearly linearly separable data and sweeping mu upward; I implemented this and observed test error rising with excessive mu.",
+      "student_verification": "I ran the failure experiment on the linear-separable-like dataset and confirmed that high mu increases test error. This ties back to Assumption 1 in Task 1.2 about multiple diverse-accurate learners existing.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 11,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Re-checking Part A rules and disclosure schema.",
+      "prompt": "this is part a, now also take this into account to make sure you are not left to assume anything",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It supplied the exact Part A disclosure schema and reminded me to match the venue-year-method constraints with the selected IJCAI 2011 SVM-ensemble paper.",
+      "student_verification": "I verified the paper details against the Part A brief and the paper metadata itself before using the schema for the repository file.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 12,
+      "date": "2026-03-09",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Understanding the error-ambiguity decomposition mentioned in DRM.",
+      "prompt": "What is the error-ambiguity decomposition E = E_bar - A_bar in ensemble learning? How does it relate to diversity in DRM?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It explained that higher ambiguity (disagreement) can improve ensemble error when average error is fixed; I connected this to the paper's motivation in Section 1.",
+      "student_verification": "I checked the paper's Section 1 and the Krogh-Vedelsby reference. The decomposition E = E_bar - A_bar is cited correctly; DRM's diversity constraint aims to increase the ambiguity term.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 13,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Ensuring Part A and Part B are both included in the submission.",
+      "prompt": "yes, make sure to include part a and b , both solutions as the repo I have to submit is same in part a and b",
+      "llm_response_used": "Partially",
+      "how_it_helped": "It reminded me to keep Part A disclosure (llm_usage_partA.json) and Part B notebooks/report in one consistent repository structure.",
+      "student_verification": "I confirmed the repo contains both llm_usage_partA.json and the partB folder with notebooks, data, results, and report. The build script writes both.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 7,
+      "prompt": "The DRM paper uses alternating QCQP and dual updates. For a simplified reproduction in limited time, what is the minimal faithful implementation that still captures the core idea of diversity regularization?",
+      "why_important": "This prompt directly shaped my implementation strategy. It led me to the gradient-based surrogate with pairwise diversity penalty, which is the backbone of SimpleDRMClassifier and all Part B experiments."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 6,
+      "prompt": "What are the main assumptions the Diversity Regularized Machine paper relies on? Think about when DRM would fail or underperform.",
+      "why_important": "This reflective prompt helped me identify the assumptions in Task 1.2 and later connect them to the failure-mode experiment in Task 3.2. It influenced both analysis and experimental design."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 1,
+      "prompt": "I need to select a paper for an Advanced ML mid-sem exam. The paper must be from a top venue (NeurIPS, ICML, IJCAI, AAAI, etc.), published 2010–2015, and use SVM or kernel methods. Suggest 3–4 candidate papers with brief summaries.",
+      "why_important": "This was the first prompt that led me to discover DRM as a candidate. Without it, I might have spent more time searching; it narrowed the space and helped me confirm DRM fit the constraints."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 10,
+      "prompt": "What failure scenario would best demonstrate when DRM's diversity regularization hurts rather than helps? The paper says diversity can act like regularization.",
+      "why_important": "This feasibility-oriented prompt guided the design of Task 3.2. It helped me choose the nearly linearly separable dataset and the mu sweep, which produced a clear failure curve and a strong link to the paper's assumptions."
+    },
+    {
+      "rank": 5,
+      "interaction_id": 3,
+      "prompt": "Explain the diversity measure div(w1, w2) = 1 - (w1^T w2)/(||w1|| ||w2||) in the Diversity Regularized Machine paper. Why does the paper use angle between weight vectors instead of output disagreement?",
+      "why_important": "This deepened my understanding of the paper's core design choice. Clarifying why direction matters for linear learners helped me explain the method in Task 1.1 and justify the diversity penalty in my implementation."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part A available in this repository preparation session.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}

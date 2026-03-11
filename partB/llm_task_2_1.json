@@ -1,0 +1,57 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {"tool_name": "Cursor", "model": "GPT-5.4", "provider": "OpenAI"}
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Choosing dataset for Task 2.1.",
+      "prompt": "What kind of dataset would best demonstrate DRM's diversity regularization? The paper uses UCI data; I need something smaller for a toy reproduction.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Suggested two-moons; I verified it matches binary classification and kernel setting.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 2.1",
+      "code_used_verbatim": false
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Linking dataset format to paper notation.",
+      "prompt": "How does the paper's training set S = {(x_i, y_i)} relate to loading a CSV for reproduction?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Clarified the input stage; I added the Section 2 reference in the notebook.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 2.1",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "What kind of dataset would best demonstrate DRM's diversity regularization? The paper uses UCI data; I need something smaller for a toy reproduction.",
+      "why_important": "This led to the two-moons choice and justification in Task 2.1."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.1.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}

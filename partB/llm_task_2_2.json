@@ -1,0 +1,72 @@
+{
+  "student_metadata": {
+    "name": "Kartik Yadav",
+    "roll_number": "230068",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-11"
+  },
+  "llm_tools_used": [
+    {"tool_name": "Cursor", "model": "GPT-5.4", "provider": "OpenAI"}
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Planning implementation for Task 2.2.",
+      "prompt": "The DRM paper uses alternating QCQP and dual updates. For a simplified reproduction in limited time, what is the minimal faithful implementation that still captures the core idea of diversity regularization?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Suggested gradient-based surrogate with pairwise diversity penalty; I implemented SimpleDRMClassifier from this.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 2.2",
+      "code_used_verbatim": true,
+      "student_modification": "Integrated the generated code, executed it end-to-end, fixed environment issues, and tuned settings to keep the submission reproducible."
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Implementing the diversity term.",
+      "prompt": "How do I map the paper's Eq. (2) diversity term to a gradient-based penalty on weight alignment?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Explained penalizing inner products; I used unit-normalized gram matrix in drm_support.py.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 2.2",
+      "code_used_verbatim": false
+    },
+    {
+      "interaction_id": 3,
+      "date": "2026-03-11",
+      "tool_name": "Cursor",
+      "model": "GPT-5.4",
+      "purpose": "Adding paper references to implementation documentation.",
+      "prompt": "Where in the paper does DRM use square hinge loss and nu-SVM? I need to cite this for the implementation.",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Pointed to Section 2.2 and Eq. (2); I verified and cited in the notebook.",
+      "student_verification": "I verified the paper references, reran the notebooks, and inspected the outputs before keeping the content.",
+      "confidence_level": 4,
+      "task_tag": "Task 2.2",
+      "code_used_verbatim": false
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "The DRM paper uses alternating QCQP and dual updates. For a simplified reproduction in limited time, what is the minimal faithful implementation that still captures the core idea of diversity regularization?",
+      "why_important": "This directly shaped the SimpleDRMClassifier implementation used in all experiments."
+    }
+  ],
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.2.",
+    "understanding acknowledged": true,
+    "signature": "Kartik Yadav",
+    "date": "2026-03-11"
+  }
+}
