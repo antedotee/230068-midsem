@@ -552,9 +552,14 @@ def build_task_2_notebooks(main_result: dict) -> None:
                 if str(ROOT) not in sys.path:
                     sys.path.insert(0, str(ROOT))
 
-                from submission_support.drm_support import metrics_table, run_main_experiment
+                from submission_support.drm_support import (
+                    metrics_table,
+                    run_main_experiment,
+                    save_main_plots,
+                )
 
                 result = run_main_experiment()
+                plot_paths = save_main_plots(result)
                 rows = metrics_table(result["metrics"])
                 rows
                 """
@@ -572,6 +577,19 @@ def build_task_2_notebooks(main_result: dict) -> None:
                 ```text
                 {table_text}
                 ```
+                """
+            ),
+            code(
+                """
+                from IPython.display import Image, display
+
+                display(Image(filename=str(plot_paths["metric_plot"])))
+                display(Image(filename=str(plot_paths["boundary_plot"])))
+                """
+            ),
+            md(
+                """
+                The plots above show the test error comparison and decision boundaries for the simplified DRM, the no-diversity ensemble, and the RBF SVM baseline. They are saved in `partB/results/`.
                 """
             ),
             md(
